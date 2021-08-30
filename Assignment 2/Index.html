@@ -1,50 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Blog</title>
+    <link rel="stylesheet" href="css/lib/bootstrap.min.css">
 </head>
-<body>
-    <div id= "drawer" style="display: inline;">
-        <div style= "width: 25%; display:block; float: left;" id=":profile;">
+
+<body style="background-color: black;">
+    <div id="drawer" class="row">
+        <div class="col-6 offset-3 card mt" id="profile">
             <h1> My Profile</h1>
-            <input type= "text" id="txtContactEmail" placeholder="JDoe@email.com">
+            <input type="text" id="txtContactEmail" placeholder="JDoe@email.com">
+
+
+
         </div>
-        <div style="width:70%; margin-left:5%; display:block; float: left;" id="blog">
-            <h1>My Awesome Blog</h1>
-            <h2>Blog post 1</h2>
-            <p>
-        
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum a nulla vel velit consequat consectetur in non nibh. Cras aliquam quis turpis in ultricies. Nullam eget scelerisque lorem, porttitor convallis orci. Proin mollis tortor velit, et blandit odio ornare vitae. Vestibulum commodo ipsum at tortor scelerisque vulputate. Cras elementum mi ante, at ultricies purus accumsan sed. Sed laoreet ipsum a risus viverra, at tincidunt dolor lacinia. Proin malesuada semper nunc, sodales fringilla magna posuere nec. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse ultricies mi nunc, in molestie nibh dapibus nec. Etiam lacinia egestas urna, quis accumsan velit. Fusce ultrices odio a tortor eleifend, quis imperdiet arcu tempus. Curabitur et tempor metus, et tempor justo.
-                
-                Proin ex risus, suscipit et tristique eu, facilisis mollis nunc. Duis a diam sed nulla finibus bibendum. Vestibulum euismod tristique vestibulum. Morbi quis mi nibh. Donec pretium scelerisque mauris. Cras bibendum tempor tincidunt. Nulla eget fringilla purus. Pellentesque quis gravida nisi. Proin fermentum aliquam mi, in suscipit est rutrum non.
-                
-                Nulla varius ex vel libero rutrum lobortis. Fusce eget ligula dolor. Fusce vel sagittis ante, id iaculis quam. Quisque neque est, dapibus et lacus ac, interdum ultrices velit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus in nisi dapibus, porttitor arcu in, ultrices nisl. Nam condimentum arcu id erat tincidunt, in rutrum lectus finibus. Integer tincidunt, nisl id sollicitudin porttitor, quam massa pretium ex, ultricies dignissim nisi purus a odio. Duis at fringilla tortor, eget pretium elit. Integer gravida venenatis ornare. Nam imperdiet pharetra sapien, non rhoncus purus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                
-                Nunc et velit et elit condimentum volutpat id sed enim. Suspendisse eu diam ut enim laoreet ultricies eu vitae magna. Integer sodales pretium venenatis. Integer pretium eu arcu ut placerat. In in viverra sapien. Nulla pharetra volutpat sodales. Donec mauris tellus, mattis a dignissim eu, pharetra gravida erat. Nulla facilisi. Nam dictum dapibus dui, nec placerat quam consequat quis. Nunc sollicitudin ultricies dolor blandit aliquam. Nulla fermentum nisi ante. Nam sit amet pellentesque ipsum. Quisque id nisi ac tellus venenatis faucibus. Pellentesque sollicitudin accumsan dui, vel consequat ipsum finibus quis. Sed ut pulvinar lectus. Aliquam a nisi dolor.
-                
-                Donec vitae libero non nulla faucibus sagittis eu at massa. Phasellus eu maximus purus. Suspendisse potenti. Pellentesque convallis vel odio vel feugiat. Curabitur fermentum, lectus ac dictum congue, mi nisl tempor purus, vel fringilla nulla dolor ut orci. Cras eleifend elit in faucibus tristique. Aliquam tempus dignissim nunc, et fringilla leo rhoncus et. Sed scelerisque risus ac libero posuere facilisis. </p>
-            <h2>Blog Post 2</h2>
-            <p>
-        
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum a nulla vel velit consequat consectetur in non nibh. Cras aliquam quis turpis in ultricies. Nullam eget scelerisque lorem, porttitor convallis orci. Proin mollis tortor velit, et blandit odio ornare vitae. Vestibulum commodo ipsum at tortor scelerisque vulputate. Cras elementum mi ante, at ultricies purus accumsan sed. Sed laoreet ipsum a risus viverra, at tincidunt dolor lacinia. Proin malesuada semper nunc, sodales fringilla magna posuere nec. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse ultricies mi nunc, in molestie nibh dapibus nec. Etiam lacinia egestas urna, quis accumsan velit. Fusce ultrices odio a tortor eleifend, quis imperdiet arcu tempus. Curabitur et tempor metus, et tempor justo.
-                
-                Proin ex risus, suscipit et tristique eu, facilisis mollis nunc.</p> 
-                
-                
-                <p> Duis a diam sed nulla finibus bibendum. Vestibulum euismod tristique vestibulum. Morbi quis mi nibh. Donec pretium scelerisque mauris. Cras bibendum tempor tincidunt. Nulla eget fringilla purus. Pellentesque quis gravida nisi. Proin fermentum aliquam mi, in suscipit est rutrum non.
-                
-                Nulla varius ex vel libero rutrum lobortis. Fusce eget ligula dolor. Fusce vel sagittis ante, id iaculis quam. Quisque neque est, dapibus et lacus ac, interdum ultrices velit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus in nisi dapibus, porttitor arcu in, ultrices nisl. Nam condimentum arcu id erat tincidunt, in rutrum lectus finibus. Integer tincidunt, nisl id sollicitudin porttitor, quam massa pretium ex, ultricies dignissim nisi purus a odio. Duis at fringilla tortor, eget pretium elit. Integer gravida venenatis ornare. Nam imperdiet pharetra sapien, non rhoncus purus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                
-                Nunc et velit et elit condimentum volutpat id sed enim. Suspendisse eu diam ut enim laoreet ultricies eu vitae magna. Integer sodales pretium venenatis. Integer pretium eu arcu ut placerat. In in viverra sapien. Nulla pharetra volutpat sodales. Donec mauris tellus, mattis a dignissim eu, pharetra gravida erat. Nulla facilisi. Nam dictum dapibus dui, nec placerat quam consequat quis. Nunc sollicitudin ultricies dolor blandit aliquam. Nulla fermentum nisi ante. Nam sit amet pellentesque ipsum. Quisque id nisi ac tellus venenatis faucibus. Pellentesque sollicitudin accumsan dui, vel consequat ipsum finibus quis. Sed ut pulvinar lectus. Aliquam a nisi dolor.
-                
-                Donec vitae libero non nulla faucibus sagittis eu at massa. Phasellus eu maximus purus. Suspendisse potenti. Pellentesque convallis vel odio vel feugiat. Curabitur fermentum, lectus ac dictum congue, mi nisl tempor purus, vel fringilla nulla dolor ut orci. Cras eleifend elit in faucibus tristique. Aliquam tempus dignissim nunc, et fringilla leo rhoncus et. Sed scelerisque risus ac libero posuere facilisis.  </p>.
-            <p>I AM A PARAGRAPH AHHHHHH</p>
     </div>
-   
-    </div>
-    
+    <script src="js/lib/jquery.min.js"></script>
+    <script src="js/lib/bootstrap.bundle.min.js"></script>
+
 </body>
+
 </html>
