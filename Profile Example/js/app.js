@@ -7,8 +7,8 @@ $('#btnTest').click(function() {
 });
 $('#cboEmployeeType').change(function() {
     if($('#cboEmployeeType').val() == 'FULL'){
-        //$('#divHours').slideDown();
-    $('divHours').css('display','none');
+        $('#divHours').slideUp();
+    //$('divHours').css('display','none');
     } else {
         $('#divHours').slideDown();
     }
