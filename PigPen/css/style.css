@@ -1,4 +1,6 @@
-body {
+body.box {
+    display: flex;
+    align-items: flex-start;
     background-image: url("images/assignment4.jpg");
     height: 100%;
     width: 100%;
@@ -17,3 +19,4 @@ body {
 .abcRioButton {
     width:100% !important;
 }
+

@@ -22,6 +22,25 @@
                 <div class="form-group mt-2">
                     <label for="txtPassword" class="form-label">Password</label>
                     <input type="password" class="form-control" id="txtPassword" placeholder="MySweetLongPassword">
+                    <div class="form-group">
+                        <label for="txtPayRate">Pay Rate</label>
+                        <input id="txtPayRate">
+                    </div>
+                    <div class="form-group" id="divHours">
+                        <label for="txtHours">Hours Worked</label>
+                        <input id="txtHours">
+                    </div>
+                    <div class="form-group">
+                        <label for="cboEmployeeType">Employee Type</label>
+                        <select id="cboEmployeeType">
+                            <option></option>
+                            <option value="FULL">Full Time</option>
+                            <option value="PART">Part Time</option>
+                        </select>
+                    </div>
+                    
+                    <button type="button" id="btnTest" class="btn btn-warning mb-3">Calculate</button>
+                </div>
                 </div>
                 <button type="button" class="btn btn-primary btn-block mb-3">Login</button>
                 <h3 class="text-center">- OR -</h3>

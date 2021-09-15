@@ -4,12 +4,12 @@ $.getJSON("https://www.swollenhippo.com/getEmployeesByAPIKey.php?APIKey=Mickey20
     arrEmployees = result;
     buildEmployeeCard();
     $.each(result,function(i,person){
-        console.log(person.FirstName);
-        console.log(person.FirstName + '' + person.LastName);
+       
         $('#txtEmail').val(person.Email);
         
     })
 })
+
 
 function buildEmployeeCard (){
     $.each(arrEmployees,function(i,person){ 
