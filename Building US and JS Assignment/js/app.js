@@ -30,7 +30,10 @@ function buildEmployeeCard (){
         strHTML += '</div>';
         strHTML += '</div>';
         $('.divEmployees').append(strHTML);
-    })
+        $('#tblEmployees tbody').append('<tr><td>' + person.FirstName + '</td><td>' + person.LastName + '</td></tr>');
+    });
+        $('#tblEmployees').DataTable();
+    }
 
     $(document).on('click','.btnCalculatePay',function() {
         let decHours = $(this).closest('.card').find('.txtHours').val();
@@ -38,4 +41,4 @@ function buildEmployeeCard (){
 
         $(this).closest('.card').find('.txtTotalPay').val(decHours * decRate);
     })
-}
+
