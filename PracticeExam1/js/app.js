@@ -16,18 +16,26 @@ function buildEmployeeCard (){
         strHTML += '<p>City: ' + person.City + ' </p>';
         strHTML += '<p>Street Address: ' + person.StreetAddress1 + ' </p>';
         strHTML += '<h4 class="mt-3">Pay Detils</h4>';
-        strHTML += '<p class="txtHourlyRate" data-rate="' + person.HourlyWage + '">Hourly Wage: ' + person.HourlyWage + '</p>';
-        strHTML += '<h4 class="mt-3">Pay Calculations</h4>';
+        strHTML += '<p class="txtHourlyWage" data-rate="' + person.HourlyWage + '">Hourly Wage: ' + person.HourlyWage + '</p>';
         strHTML += '<div class="form-group mb-0">';
-        strHTML += '<label class="mr-2">Hours Worked</label>';
-        strHTML += '<input class="txtHours">';
         strHTML += '</div>';
         strHTML += '<div class="form-group">';
-        strHTML += '<label class="mr-2">Total Pay</label>';
-        strHTML += '<input class="txtTotalPay" disabled>';
+        strHTML += '<label class="mr-2">Pay Wanted</label>';
+        strHTML += '<input class="txtPayWanted">';
+        strHTML += '<label class="mr-2"> Hours Needed</label>';
+        strHTML += '<input class="txtHoursNeeded" disabled>';
         strHTML += '<button class="btn btn-primary btn-block btnCalculatePay">Calculate Pay</button>'
         strHTML += '</div>';
         strHTML += '</div>';
         $('.divEmployees').append(strHTML);
-    })
+    });
+    
 }
+
+$(document).on('click','.btnCalculatePay',function() {
+    let decPayWanted = $(this).closest('.card').find('.txtPayWanted').val();
+    let decHourlyWage = $(this).closest('.card').find('.txtHourlyWage').val().split(':')[1];
+
+    $(this).closest('.card').find('.txtHoursNeeded').val(decPayWanted * decHourlyWage);
+})
+
