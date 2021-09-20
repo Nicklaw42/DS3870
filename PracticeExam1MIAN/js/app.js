@@ -33,12 +33,15 @@ function buildEmployeeCard (){
         strHTML += '</div>';
         strHTML += '</div>';
         $('.divEmployees').append(strHTML);
-        $('#tblEmployees tbody').append('<tr><td>' + person.FirstName + '</td><td> ' + person.LastName + ' </td><td>' + person.Title + '</td> <td></td></tr>');
+        $('#tblEmployees tbody').append('<tr><td>' + person.FirstName + '</td><td>  ' + person.LastName + ' </td><td>' + person.Title + '</td> <td>'+ calculateTotalPay() +'</td></tr>');
     });
     $('#tblEmployees').DataTable();
     
 }
 
+function calculateTotalPay (){
+    
+}
 
 
 $(document).on('click','.btnCalculatePay',function() {
