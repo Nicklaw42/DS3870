@@ -13,14 +13,14 @@
     
     <body>
         <h1 class="text-center"> Nostalgia Enterprises</h1>
-        <div class="card col-8 row offset-2"> 
+        <div id="divWelcome" class="card col-8 row offset-2"> 
             <h1> Welcome! </h1>
             <h4> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis magna et ex mollis condimentum.</h4>
             <button id="btnToggleView" class="btn-warning mb-3"> Toggle View </button>
         </div>
         <div class="divEmployees col-12 row"></div>
-        <div class="card">
-        <table class="table card mt-3" id="tblEmployees">
+        <div class="card mt-3">
+        <table class="table" style="display: none;" id="tblEmployees">
                 <thead>
                     <tr><th>First Name</th><th>Last Name</th><th>Position</th><th>Total Pay</th></tr>
                 </thead>

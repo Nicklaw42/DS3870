@@ -1,13 +1,15 @@
 var arrEmployee;
 $.getJSON("https://www.swollenhippo.com/getStaffByAPIKey.php?APIKey=DuffManSays,Phrasing!", function(result){
-        console.log(result);
         arrEmployee = result;
         buildEmployeeCard();
         calculatePay ();
        
 })
 
-
+$(document).on('click','#btnToggleView',function(){
+    $('.divEmployees').slideToggle();
+    $('#tblEmployees').slideToggle();
+})
 
 function buildEmployeeCard (){
     $.each(arrEmployee, function(i,person){
@@ -29,24 +31,12 @@ function buildEmployeeCard (){
         strHTML += '<input class="txtPayWanted">';
         strHTML += '<label class="mr-2 mb-2"> Hours Needed</label>';
         strHTML += '<input class="txtHoursNeeded" disabled>';
-        strHTML += '<button class="btn btn-primary btn-block btnCalculatePay mt-3">Calculate Pay</button>'
+        strHTML += '<button class="btn btn-primary btnCalculate mt-3">Calculate Pay</button>'
         strHTML += '</div>';
         strHTML += '</div>';
         $('.divEmployees').append(strHTML);
-        $('#tblEmployees tbody').append('<tr><td>' + person.FirstName + '</td><td>  ' + person.LastName + ' </td><td>' + person.Title + '</td> <td>'+ calculateTotalPay() +'</td></tr>');
+        $('#tblEmployees tbody').append('<tr><td>' + person.FirstName + '</td><td>  ' + person.LastName + ' </td><td>' + person.Title + '</td> <td></td></tr>');
     });
     $('#tblEmployees').DataTable();
     
 }
-
-function calculateTotalPay (){
-    
-}
-
-
-$(document).on('click','.btnCalculatePay',function() {
-    let decPayWanted = $(this).closest('.card').find('.txtPayWanted').val();
-    let decHourlyWage = $(this).closest('.card').find('.txtHourlyWage').val().split(':')[1];
-    $(this).closest('.card').find('.txtHoursNeeded').val(decPayWanted * decHourlyWage);
-})
-
