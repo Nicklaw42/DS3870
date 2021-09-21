@@ -11,6 +11,13 @@ $(document).on('click','#btnToggleView',function(){
     $('#tblEmployees').slideToggle();
 })
 
+function calculatePay(decHours, decHourlyWage) {
+ let decTotalPay = decHours * decHourlyWage;
+
+ return Math.round (decTotalPay);
+}
+
+
 function buildEmployeeCard (){
     $.each(arrEmployee, function(i,person){
         let strHTML = '<div class="card mt-4 mb-3 ml-2 col-2">';
@@ -35,7 +42,7 @@ function buildEmployeeCard (){
         strHTML += '</div>';
         strHTML += '</div>';
         $('.divEmployees').append(strHTML);
-        $('#tblEmployees tbody').append('<tr><td>' + person.FirstName + '</td><td>  ' + person.LastName + ' </td><td>' + person.Title + '</td> <td></td></tr>');
+        $('#tblEmployees tbody').append('<tr><td>' + person.FirstName + '</td><td>  ' + person.LastName + ' </td><td>' + person.Title + '</td> <td>'+ calculatePay(person.Hours, person.HourlyWage) +'</td></tr>');
     });
     $('#tblEmployees').DataTable();
     
