@@ -2,13 +2,35 @@ body {
     background-image: url('images/background.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: cover;
   }
+
+  #divCenter{
+      display: flex;
+      justify-content: space-evenly;
+
+  }
+
+  #divLefSide{
+      flex-grow: 3;
+  }
+
+  #divAgent{
+      display: flex;
+      flex-direction: row;
+  }
+
+ 
 
   #divProfile{
       height: 50px;
   }
 
   #divAgentInfo{
-      text-align: left;
+      flex-direction: row;
+  }
+
+
+  #btnToggleContactDetails{
+      width: 95%;
+      align-self: center;
   }
