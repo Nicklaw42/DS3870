@@ -43,13 +43,16 @@ namespace ISISGetEmployee
             public string Position { get; set; }
 
             public string Status { get; set; }
-            public Employee(string strFirstName, string strLastName, string strCodeName, string strPosition, string strStatus)
+
+            public Agency Agency { get; set;}
+            public Employee(string strFirstName, string strLastName, string strCodeName, string strPosition, string strStatus, Agency agSpyAgency)
             {
                 FirstName = strFirstName;
                 LastName = strLastName;
                 CodeName = strCodeName;
                 Position = strPosition;
                 Status = strStatus;
+                Agency = agSpyAgency;
             }
 
 
@@ -63,15 +66,24 @@ namespace ISISGetEmployee
 
             string strCodeName = req.Query["CodeName"];
 
-            Employee Archer = new Employee("Sterling", "Archer", "Duchess", "Field Agent", "Active");
+            Agency ISIS = new Agency("ISIS", "10fiejfioej", "399343");
+            Employee Archer = new Employee("Sterling", "Archer", "Duchess", "Field Agent", "Active", ISIS);
+            Employee Lana = new Employee("dog", "Aslad", "BAnana", "Agenter", "Active", ISIS);
+           
 
-
+          
             string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
             dynamic data = JsonConvert.DeserializeObject(requestBody);
 
-            if (strCodeName == null)
+            List < Employee > 1stFoundEmployess = new List<Employee>();
+            arrEmployees.Add(Archer);
+            arrEmployees.Add(Lana);
+           foreach(Employee emp Current in arrEmployees)
             {
-                return new OkObjectResult("Employee Not Found");
+                if(strCodeName == empCurrent.CodeName in arrEmployees)
+                {
+                    1stFoundEmployees.Add(Current);
+                }
             } else
             {
                 if(strCodeName == "Duchess")
