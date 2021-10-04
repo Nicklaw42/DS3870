@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
@@ -8,12 +9,30 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 
+
+
 namespace ISISGetEmployee
 {
   
   
     public static class Function1
     {
+        private class Agency
+        {
+            public string Name { get; set; }
+            public string Address { get; set; }
+            public string Phone { get; set; }
+
+
+
+            public Agency(string strName, string strAddress, string strPhone)
+            {
+                Name = strName;
+                Address = strAddress; 
+                Phone = strPhone;
+
+            }
+        }
         private class Employee
         {
             public string FirstName { get; set; }
@@ -32,6 +51,8 @@ namespace ISISGetEmployee
                 Position = strPosition;
                 Status = strStatus;
             }
+
+
         }
         [FunctionName("getEmployee")]
         public static async Task<IActionResult> Run(
