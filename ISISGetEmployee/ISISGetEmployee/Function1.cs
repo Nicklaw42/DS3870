@@ -62,38 +62,40 @@ namespace ISISGetEmployee
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest req,
             ILogger log)
         {
-            log.LogInformation("C# HTTP trigger function processed a request.");
-
             string strCodeName = req.Query["CodeName"];
+            string strAgency = req.Query["Agency"];
+            log.LogInformation("HTTP trigger on getEmployee proceed a request for " + strCodeName + "");
+
+
 
             Agency ISIS = new Agency("ISIS", "10fiejfioej", "399343");
+            Agency CIA = new Agency("CIA", "23302232", "29930040");
             Employee Archer = new Employee("Sterling", "Archer", "Duchess", "Field Agent", "Active", ISIS);
             Employee Lana = new Employee("dog", "Aslad", "BAnana", "Agenter", "Active", ISIS);
+            Employee Pam = new Employee("Pam", "Poovy", "Duchess", "Human Resources", "Active", CIA);
            
 
           
             string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
             dynamic data = JsonConvert.DeserializeObject(requestBody);
 
-            List < Employee > 1stFoundEmployess = new List<Employee>();
-            arrEmployees.Add(Archer);
-            arrEmployees.Add(Lana);
-           foreach(Employee emp Current in arrEmployees)
+            Employee[] arrEmployees = new Employee[] { Archer, Lana, Pam };
+  
+            List<Employee> firstFoundEmployees = new List<Employee>();
+            foreach (Employee empCurrent in arrEmployees)
             {
-                if(strCodeName == empCurrent.CodeName in arrEmployees)
+                if (strCodeName == empCurrent.CodeName)
                 {
-                    1stFoundEmployees.Add(Current);
-                }
-            } else
-            {
-                if(strCodeName == "Duchess")
-                {
-                    return new OkObjectResult(Archer);
+                    firstFoundEmployees.Add(empCurrent);
                 }
             }
-            return new OkObjectResult("Employee Not Found");
-
-
+            if(firstFoundEmployees.Count > 0)
+            {
+                return new OkObjectResult(firstFoundEmployees);
+            }else
+            {
+                return new OkObjectResult("Employee Not Found");
+            }
         }
     }
 }
