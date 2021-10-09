@@ -85,6 +85,7 @@ namespace ISISGetEmployee
             Employee[] arrEmployees = new Employee[] { Archer, Lana, Pam };
   
             List<Employee> firstFoundEmployees = new List<Employee>();
+            
             foreach (Employee empCurrent in arrEmployees)
             {
                 if (strCodeName == empCurrent.CodeName)
