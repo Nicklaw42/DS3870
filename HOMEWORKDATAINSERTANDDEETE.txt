@@ -1,0 +1,16 @@
+1.)
+string Query = "INSERT INTO tblAgencies (AgencyName, AgencyID, City, State, NationalAffiliation) VALUES ('@AgencyName','@AgencyID', '@City,' '@State', '@Country');"
+
+2.)
+string Query = "INSERT INTO tblVehicles (Make, Model, Year, Armored, VIN) VALUE (@parMake, @parModel, @parYear, @parArmored, @parVIN);"
+
+
+	SQLParamerter parMake = new SQLParameter("parMade", SQLDataType.varchar);
+	parMake.Value = "Toyota";
+	comSpyAgencies.Parameters.Add(parMake);
+
+3.)
+stringQuery = "UPDATE tblVehicles SET Armored = @parArmored WHERE VIN = @parVIN;" 
+
+4.)
+stringQuery = "INSERT INTO tblAssignmntes (AssignmentI, Mission, Agent, AgentRole) VALUES (CONVERT(varchar(50),NEWID()),@parMission, @parGent, @parAgentRole);"
