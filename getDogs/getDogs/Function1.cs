@@ -55,25 +55,30 @@ namespace getDogs
             Dog Sam = new Dog("Ridgeback", "Sam", "Law");
             Dog Rosy = new Dog("Terrier", "Rosy", "Barns");
 
+            Vet Ryan = new Vet("ab3456", "Ryan", "Derringer", 43, Boomer);
+            Vet Sara = new Vet("ab3455", "Sara", "McKinely", 50, Sam);
+            Vet Carl = new Vet("ab3444", "Carl", "Wheezer", 40, Rosy);
+
             List<Dog> arrDogs = new List<Dog>();
             arrDogs.Add(Sam);
             arrDogs.Add(Rosy);
             arrDogs.Add(Boomer);
 
-            List<Dog> arrFoundDog = new List<Dog>();
+            List<Dog> lstFoundDog = new List<Dog>();
 
             foreach (Dog dog in arrDogs)
             {
-                if (dog == Sam)
+                
+                if (dog.Name == Sam)
                 {
-                    arrFoundDog.Add(dog);
+                    lstFoundDog.Add(dog);
                 }
                 else
                 {
                     return new OkObjectResult("There is no dog here");
                 }
             }
-            return new OkObjectResult(arrFoundDog);
+            return new OkObjectResult(lstFoundDog);
 
 
 
