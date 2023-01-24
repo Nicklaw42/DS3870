@@ -1,0 +1,25 @@
+body {
+    background-image: url('images/background.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+
+
+.divEmployees {
+    display:flex;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    flex-direction: row;
+    height: 100vh;
+    
+    
+}
+
+
+.flex-item{
+    order: 4;
+    flex-grow: 1;
+}
+
+

@@ -1,0 +1,22 @@
+body.box {
+    display: flex;
+    align-items: flex-start;
+    background-image: url("images/assignment4.jpg");
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    background-size: auto;
+}
+#divExtraLogin {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.g-signin2 {
+    width: 100%;
+}
+.abcRioButton {
+    width:100% !important;
+}
+
